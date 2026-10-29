@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="marshGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD1DC" />
+      <stop offset="50%" stop-color="#F8BBD0" />
+      <stop offset="100%" stop-color="#B5EAD7" />
+    </linearGradient>
+    <linearGradient id="twistPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB7B2" />
+      <stop offset="100%" stop-color="#F8BBD0" />
+    </linearGradient>
+    <linearGradient id="twistBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E1F5FE" />
+      <stop offset="100%" stop-color="#81D4FA" />
+    </linearGradient>
+    <linearGradient id="twistYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5BA" />
+      <stop offset="100%" stop-color="#FFDAC1" />
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#885E7D" flood-opacity="0.15" />
+    </filter>
+  </defs>
+  
+  <!-- Outer Glow / Background Circle -->
+  <circle cx="100" cy="100" r="90" fill="#FFF9F5" stroke="#F8BBD0" stroke-width="3" filter="url(#softShadow)" />
+
+  <!-- Stylized Twisted Marshmallow Body -->
+  <g transform="rotate(-15 100 100)">
+    <!-- Top Pill -->
+    <path d="M 60,60 C 60,45 140,45 140,60 C 140,75 60,75 60,60 Z" fill="url(#twistPink)" />
+    <!-- Middle Pill 1 -->
+    <path d="M 55,85 C 55,70 145,70 145,85 C 145,100 55,100 55,85 Z" fill="url(#twistYellow)" />
+    <!-- Middle Pill 2 -->
+    <path d="M 55,110 C 55,95 145,95 145,110 C 145,125 55,125 55,110 Z" fill="url(#twistBlue)" />
+    <!-- Bottom Pill -->
+    <path d="M 60,135 C 60,120 140,120 140,135 C 140,150 60,150 60,135 Z" fill="url(#twistPink)" />
+
+    <!-- Marshmallow Cute Face -->
+    <circle cx="82" cy="98" r="4.5" fill="#4A3E4E" />
+    <circle cx="118" cy="98" r="4.5" fill="#4A3E4E" />
+    <!-- Rosy Cheeks -->
+    <ellipse cx="75" cy="104" rx="5" ry="3" fill="#FF8B94" opacity="0.6" />
+    <ellipse cx="125" cy="104" rx="5" ry="3" fill="#FF8B94" opacity="0.6" />
+    <!-- Cute Smile -->
+    <path d="M 94,103 Q 100,110 106,103" fill="none" stroke="#4A3E4E" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <!-- Sparkles -->
+  <path d="M 155 45 L 158 55 L 168 58 L 158 61 L 155 71 L 152 61 L 142 58 L 152 55 Z" fill="#FFB7B2" opacity="0.8" />
+  <path d="M 40 140 L 42 147 L 49 149 L 42 151 L 40 158 L 38 151 L 31 149 L 38 147 Z" fill="#81D4FA" opacity="0.8" />
+  <circle cx="160" cy="130" r="4" fill="#FFF5BA" />
+</svg>

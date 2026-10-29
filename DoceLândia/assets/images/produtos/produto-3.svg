@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="400" height="300" rx="16" fill="#F8BBD0" opacity="0.25"/>
+  <circle cx="200" cy="150" r="110" fill="#FFF9F5"/>
+  <g transform="translate(100, 80)">
+    <!-- Plate -->
+    <ellipse cx="100" cy="140" rx="90" ry="30" fill="#E1F5FE" stroke="#81D4FA" stroke-width="2"/>
+    <!-- Truffle 1 (Back Left) -->
+    <circle cx="65" cy="120" r="30" fill="#5D4037"/>
+    <path d="M 45 110 Q 65 95 85 110" stroke="#8D6E63" stroke-width="4" fill="none"/>
+    <!-- Truffle 2 (Back Right) -->
+    <circle cx="135" cy="120" r="30" fill="#4E342E"/>
+    <path d="M 115 110 Q 135 95 155 110" stroke="#FFB7B2" stroke-width="3" fill="none"/>
+    <!-- Truffle 3 (Front Center) -->
+    <circle cx="100" cy="135" r="35" fill="#3E2723"/>
+    <path d="M 75 125 C 85 105, 115 105, 125 125" stroke="#FFF5BA" stroke-width="4" fill="none"/>
+    <!-- Gold Dust / Cocoa powder sprinkles -->
+    <circle cx="90" cy="120" r="2" fill="#FFD700"/>
+    <circle cx="105" cy="115" r="1.5" fill="#FFD700"/>
+    <circle cx="115" cy="130" r="2" fill="#FFD700"/>
+  </g>
+</svg>

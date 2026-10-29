@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar - DoceLândia</title>
+  <meta name="description" content="Crie sua conta na DoceLândia e aproveite as melhores novidades e ofertas em doces artesanais." />
+  
+  <!-- Google Fonts & Material Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- User Dropdown Structure -->
+  <ul id="userDropdown" class="dropdown-content c-navbar__dropdown">
+    <li><a href="#!" onclick="M.toast({html: 'Perfil do usuário', classes: 'c-toast-success'})"><i class="material-icons">person</i> Meu Perfil</a></li>
+    <li><a href="carrinho.html"><i class="material-icons">shopping_bag</i> Meus Pedidos</a></li>
+    <li class="divider"></li>
+    <li><a href="#!" onclick="logoutUser()"><i class="material-icons">exit_to_app</i> Sair</a></li>
+  </ul>
+
+  <!-- Navbar -->
+  <header class="navbar-fixed">
+    <nav class="c-navbar">
+      <div class="nav-wrapper container">
+        <a href="index.html" class="c-navbar__brand left">
+          <img src="assets/images/logo-marshmallow.svg" alt="DoceLândia Marshmallow Logo" class="c-navbar__logo-img" />
+          <span class="c-navbar__brand-text">DoceLândia</span>
+        </a>
+
+        <a href="#" data-target="mobileNav" class="sidenav-trigger right hide-on-med-and-up waves-effect waves-light" style="color: var(--color-text-main);">
+          <i class="material-icons">menu</i>
+        </a>
+
+        <ul class="right hide-on-small-only" style="display: flex; align-items: center;">
+          <li class="c-navbar__search">
+            <input type="text" id="searchInput" class="c-navbar__search-input" placeholder="Buscar doces artesanais..." />
+            <button class="c-navbar__search-btn" aria-label="Pesquisar">
+              <i class="material-icons">search</i>
+            </button>
+          </li>
+
+          <li class="c-navbar__nav-item">
+            <a href="carrinho.html" class="c-navbar__link" title="Ver Carrinho">
+              <i class="material-icons">shopping_cart</i>
+              <span>Carrinho</span>
+              <span id="cartBadge" class="c-navbar__cart-badge" style="display:none;">0</span>
+            </a>
+          </li>
+
+          <span id="navbarAuthContainer" style="display: flex; align-items: center;">
+            <li>
+              <a href="login.html" class="c-navbar__link">
+                <i class="material-icons">account_circle</i>
+                <span>Entrar</span>
+              </a>
+            </li>
+          </span>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Sidenav -->
+  <ul class="sidenav" id="mobileNav">
+    <li>
+      <div class="user-view" style="padding: 20px; background: var(--color-primary-pink);">
+        <img src="assets/images/logo-marshmallow.svg" alt="DoceLândia" style="width: 50px;" />
+        <span class="white-text name" style="font-weight: 800; font-size: 1.2rem;">DoceLândia</span>
+      </div>
+    </li>
+    <li><a href="index.html"><i class="material-icons">store</i> Início</a></li>
+    <li><a href="carrinho.html"><i class="material-icons">shopping_cart</i> Carrinho</a></li>
+    <li><a href="login.html"><i class="material-icons">account_circle</i> Entrar / Cadastrar</a></li>
+  </ul>
+
+  <!-- Main Content Auth -->
+  <main class="c-auth-container">
+    <div class="c-auth-card">
+      <img src="assets/images/logo-marshmallow.svg" alt="DoceLândia" class="c-auth-card__logo" />
+      <h1 class="c-auth-card__title">Criar Conta</h1>
+      <p class="c-auth-card__subtitle">Preencha seus dados para fazer parte da DoceLândia</p>
+
+      <form id="registerForm" onsubmit="handleRegisterSubmit(event)">
+        <div class="input-field align-left">
+          <i class="material-icons prefix" style="color: var(--color-pink-dark);">person</i>
+          <input type="text" id="regName" required />
+          <label for="regName">Nome Completo</label>
+        </div>
+
+        <div class="input-field align-left">
+          <i class="material-icons prefix" style="color: var(--color-pink-dark);">email</i>
+          <input type="email" id="regEmail" required />
+          <label for="regEmail">E-mail</label>
+        </div>
+
+        <div class="input-field align-left">
+          <i class="material-icons prefix" style="color: var(--color-pink-dark);">lock</i>
+          <input type="password" id="regPassword" required />
+          <label for="regPassword">Senha</label>
+        </div>
+
+        <button type="submit" class="btn c-btn c-btn--full" style="height: 48px !important; margin-top: 15px;">
+          Concluir Cadastro
+        </button>
+      </form>
+
+      <div class="c-auth-card__links">
+        <span>Já possui uma conta? <a href="login.html" style="font-weight: 800;">Faça login</a></span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="c-footer">
+    <div class="container">
+      <div class="c-footer__copyright">
+        © 2026 DoceLândia Confeitaria Artesanal. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Materialize JS CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Custom JS Modules -->
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/app.js"></script>
+
+  <script>
+    function handleRegisterSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('regName').value.trim();
+      const email = document.getElementById('regEmail').value.trim();
+      const password = document.getElementById('regPassword').value;
+      registerUser(name, email, password);
+    }
+  </script>
+</body>
+</html>
